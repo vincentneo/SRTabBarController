@@ -154,7 +154,7 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 		}
 
         let pieces: [String] = id.rawValue.split(separator: "_").map(String.init)
-        print(pieces);
+
 		guard let index = Int(pieces[1]) else {
 			print("Could not get index from identifier")
 			return
