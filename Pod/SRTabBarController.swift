@@ -30,6 +30,8 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
             embedTabs()
         }
     }
+    /// Sets the position of the tab bar image. Initiate before super.viewDidLoad()
+    public var tabBarImagePosition: NSControl.ImagePosition?
     
     /// The background color of the tab bar
 	@IBInspectable public var barBackgroundColor: NSColor = NSColor.black {
@@ -159,8 +161,8 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 			print("Could not get index from identifier")
 			return
 		}
-
-		let item = SRTabItem(index: index, viewController: vc)
+        
+        let item = SRTabItem(index: index, viewController: vc, imgPosition: tabBarImagePosition)
 		if pieces.count > 2 {
             item.offImage = NSImage(named: NSImage.Name(pieces[2]))
             item.onImage = NSImage(named: NSImage.Name(pieces[2]))

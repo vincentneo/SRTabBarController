@@ -3,6 +3,8 @@
 //  Example
 //
 //  Created by Stephen Radford on 16/05/2016.
+//  Updated by Vincent Neo on 02/09/2018.
+//
 //  Copyright © 2016 Stephen Radford. All rights reserved.
 //
 
@@ -24,14 +26,21 @@ public class SRTabItem: NSButton {
 
 	// MARK: - Initializers
 
-	init(index: Int, viewController: NSViewController) {
+    init(index: Int, viewController: NSViewController, imgPosition: ImagePosition?) {
 		super.init(frame: NSZeroRect)
 
 		self.index = index
 		self.viewController = viewController
 		wantsLayer = true
 		isBordered = false
-		imagePosition = .imageAbove
+ 
+        if imgPosition == nil { // If position is not declared, default is loaded
+            imagePosition = .imageAbove // Default: ImageAbove
+        }
+        else {
+            imagePosition = imgPosition!
+        }
+        
 		setButtonType(.momentaryChange)
 
 		if let title = viewController.title {
