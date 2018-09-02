@@ -53,6 +53,8 @@ Alongside the settings that can be defined within Interface Builder's inspector 
 
 **Location** - To customize the location on the screen set `tabBarLocation` to `.Top`, `.Right`, `.Bottom`, or `.Left`.
 
+**Bar Item Image Position** - To customize the position of the image of the bar item, set `tabBarImagePosition` to options available by `NSControl.ImagePosition`, such as `.imageLeft`, `.imageRight`, `.imageAbove`, `.imageBelow` or `.imageOnly`.
+
 **Translucency** - To enable the visual effects turn set `tabBar?.translucent = true`.
 
 **Visual Effects** - Check out the `NSVisualEffectsView` for some of the settings that can be enabled for the `tabBar`. You'll most likely want to change the `material` and `blendingMode`.
