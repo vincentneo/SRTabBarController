@@ -43,8 +43,6 @@ public class SRTabItem: NSButton {
 			title = ""
 			imagePosition = .imageOnly
 		}
-
-		(cell as? NSButtonCell)?.highlightsBy = NSCell.StyleMask.changeBackgroundCellMask
 	}
 
 	required public init?(coder: NSCoder) {
@@ -60,7 +58,7 @@ public class SRTabItem: NSButton {
 
 	// MARK: - Actions
 
-	@objc func buttonPressed() {
+    @objc func buttonPressed() {
 		delegate?.tabIndexShouldChangeTo(index: index)
 	}
 

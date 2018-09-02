@@ -141,7 +141,7 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
 	}
 
-	@objc override open func prepare( for segue: NSStoryboardSegue, sender: Any!) {
+    override open func prepare(for segue: NSStoryboardSegue, sender: Any!) {
 
 		guard let id = segue.identifier else {
 			print("Identifier not set")
@@ -153,8 +153,8 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 			return
 		}
 
-        let pieces: [String] = id.rawValue.characters.split(separator: "_").map(String.init)
-
+        let pieces: [String] = id.rawValue.split(separator: "_").map(String.init)
+        print(pieces);
 		guard let index = Int(pieces[1]) else {
 			print("Could not get index from identifier")
 			return
@@ -162,8 +162,8 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
 		let item = SRTabItem(index: index, viewController: vc)
 		if pieces.count > 2 {
-			item.offImage = NSImage(named: NSImage.Name(rawValue: pieces[2] + "_inactive") )
-			item.onImage = NSImage( named: NSImage.Name(rawValue: pieces[2] + "_active") )
+            item.offImage = NSImage(named: NSImage.Name(pieces[2]))
+            item.onImage = NSImage(named: NSImage.Name(pieces[2]))
 		}
 		addTabItem(item: item)
 
