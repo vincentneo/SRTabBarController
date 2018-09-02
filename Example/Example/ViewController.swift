@@ -14,6 +14,7 @@ class ViewController: SRTabBarController {
 
     override func viewDidLoad() {
         tabBarImagePosition = .imageLeft
+        tabBarFont = NSFont.systemFont(ofSize: 12, weight: .black)
         super.viewDidLoad()
         
         tabBarLocation = .Top

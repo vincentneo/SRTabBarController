@@ -20,32 +20,40 @@ public class SRTabItem: NSButton {
 
 	var onImage : NSImage? = nil
 	var offImage : NSImage? = nil
-
+    var currentFont: NSFont? = nil
+    
 	/// The view controller associated with this item
 	public var viewController: NSViewController?
-
+    
 	// MARK: - Initializers
 
-    init(index: Int, viewController: NSViewController, imgPosition: ImagePosition?) {
+    init(index: Int, viewController: NSViewController, imgPosition: ImagePosition?, font: NSFont?) {
 		super.init(frame: NSZeroRect)
 
 		self.index = index
 		self.viewController = viewController
 		wantsLayer = true
 		isBordered = false
- 
+        
         if imgPosition == nil { // If position is not declared, default is loaded
-            imagePosition = .imageAbove // Default: ImageAbove
+            imagePosition = .imageAbove // Default: imageAbove
         }
         else {
             imagePosition = imgPosition!
+        }
+
+        if font == nil { // If font is not declared, default is loaded
+            currentFont = NSFont.systemFont(ofSize: 10) // Default: size 10 system
+        }
+        else {
+            currentFont = font!
         }
         
 		setButtonType(.momentaryChange)
 
 		if let title = viewController.title {
 			attributedTitle = NSAttributedString(string: title, attributes: [
-				NSAttributedStringKey.font: NSFont.systemFont(ofSize: 10),
+                NSAttributedStringKey.font: currentFont ?? NSFont.systemFont(ofSize: 10),
 				NSAttributedStringKey.foregroundColor: NSColor.blue
 				])
 		} else {
@@ -74,7 +82,7 @@ public class SRTabItem: NSButton {
 	func setTintColor(tint: NSColor) {
 
 		attributedTitle = NSAttributedString(string: title, attributes: [
-			NSAttributedStringKey.font: NSFont.systemFont(ofSize: 10),
+            NSAttributedStringKey.font: currentFont ?? NSFont.systemFont(ofSize: 10),
 			NSAttributedStringKey.foregroundColor: tint
 			])
 
