@@ -19,7 +19,7 @@
 SRTabBarController can be installed manually by including all files within the `Pod` directory in your project. However, installation via CocoaPods is recommended.
 
 ````ruby
-pod 'SRTabBarController', :git => 'https://github.com/steve228uk/SRTabBarController.git'
+pod 'SRTabBarController', :git => 'https://github.com/vincentneo/SRTabBarController.git'
 ````
 
 ## Usage
