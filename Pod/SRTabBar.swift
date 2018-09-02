@@ -58,8 +58,8 @@ public class SRTabBar: NSVisualEffectView {
             } else {
 				stack?.alignment = .centerX
                 
-				let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[stack]-10-|", options: .directionLeadingToTrailing, metrics: nil, views: ["stack": stack!])
-				let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|-30-[stack]", options: .directionLeadingToTrailing, metrics: nil, views: ["stack": stack!])
+				let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[stack]-10-|", options: NSLayoutConstraint.FormatOptions.directionLeadingToTrailing, metrics: nil, views: ["stack": stack!])
+				let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:|-30-[stack]", options: NSLayoutConstraint.FormatOptions.directionLeadingToTrailing, metrics: nil, views: ["stack": stack!])
                 
                 addConstraints(horizontal)
                 addConstraints(vertical)
@@ -88,8 +88,8 @@ public class SRTabBar: NSVisualEffectView {
         addSubview(backgroundView)
         
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[subview]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["subview": backgroundView]))
-		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[subview]-0-|", options: .directionLeadingToTrailing, metrics: nil, views: ["subview": backgroundView]))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[subview]-0-|", options: NSLayoutConstraint.FormatOptions.directionLeadingToTrailing, metrics: nil, views: ["subview": backgroundView]))
+		addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[subview]-0-|", options: NSLayoutConstraint.FormatOptions.directionLeadingToTrailing, metrics: nil, views: ["subview": backgroundView]))
         
 		state = .inactive
     }

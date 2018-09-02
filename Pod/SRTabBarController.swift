@@ -70,11 +70,11 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 		embedTabs()
 	}
 
-	open override func viewWillAppear() {
+    open override func viewWillAppear() {
 		for item in (self.tabBar?.items)! {
 			let userInfo = ["button" : item ]
 			let area = NSTrackingArea.init( rect: item.bounds,
-											options: [NSTrackingAreaOptions.mouseEnteredAndExited, NSTrackingAreaOptions.activeAlways],
+											options: [NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeAlways],
 											owner: item, userInfo: nil)
 			item.addTrackingArea(area)
 		}
@@ -84,14 +84,14 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 	Load the view from the NIB
 	*/
 	private func loadViewFromNib() {
-		var nibObjects: NSArray = []
-		Bundle(for: SRTabBarController.self).loadNibNamed(tabBarLocation.rawValue, owner: self, topLevelObjects: &nibObjects)
+		var nibObjects: NSArray? = []
+        Bundle(for: SRTabBarController.self).loadNibNamed(NSNib.Name(rawValue: tabBarLocation.rawValue), owner: self, topLevelObjects: &nibObjects)
 
-		guard nibObjects.count != 0 else {
+        guard nibObjects?.count != 0 else {
 			fatalError("Could not load tab bar controller")
 		}
 
-		for object in nibObjects {
+        for object in nibObjects! {
 			guard let view = object as? SRTabView else {
 				continue
 			}
@@ -133,7 +133,7 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
 		for segue in segues {
 			if let id = segue.value(forKey: "identifier") as? String {
-				performSegue(withIdentifier: id, sender: self)
+				performSegue(withIdentifier: NSStoryboardSegue.Identifier(rawValue: id), sender: self)
 			}
 		}
 
@@ -141,7 +141,7 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
 	}
 
-	override open func prepare( for segue: NSStoryboardSegue, sender: Any!) {
+	@objc override open func prepare( for segue: NSStoryboardSegue, sender: Any!) {
 
 		guard let id = segue.identifier else {
 			print("Identifier not set")
@@ -153,7 +153,7 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 			return
 		}
 
-		let pieces: [String] = id.characters.split(separator: "_").map(String.init)
+        let pieces: [String] = id.rawValue.characters.split(separator: "_").map(String.init)
 
 		guard let index = Int(pieces[1]) else {
 			print("Could not get index from identifier")
@@ -162,8 +162,8 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
 		let item = SRTabItem(index: index, viewController: vc)
 		if pieces.count > 2 {
-			item.offImage = NSImage(named: pieces[2] + "_inactive" )
-			item.onImage = NSImage( named: pieces[2] + "_active" )
+			item.offImage = NSImage(named: NSImage.Name(rawValue: pieces[2] + "_inactive") )
+			item.onImage = NSImage( named: NSImage.Name(rawValue: pieces[2] + "_active") )
 		}
 		addTabItem(item: item)
 

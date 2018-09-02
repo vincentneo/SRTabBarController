@@ -36,15 +36,15 @@ public class SRTabItem: NSButton {
 
 		if let title = viewController.title {
 			attributedTitle = NSAttributedString(string: title, attributes: [
-				NSFontAttributeName: NSFont.systemFont(ofSize: 10),
-				NSForegroundColorAttributeName: NSColor.blue
+				NSAttributedStringKey.font: NSFont.systemFont(ofSize: 10),
+				NSAttributedStringKey.foregroundColor: NSColor.blue
 				])
 		} else {
 			title = ""
 			imagePosition = .imageOnly
 		}
 
-		(cell as? NSButtonCell)?.highlightsBy = .changeBackgroundCellMask
+		(cell as? NSButtonCell)?.highlightsBy = NSCell.StyleMask.changeBackgroundCellMask
 	}
 
 	required public init?(coder: NSCoder) {
@@ -67,8 +67,8 @@ public class SRTabItem: NSButton {
 	func setTintColor(tint: NSColor) {
 
 		attributedTitle = NSAttributedString(string: title, attributes: [
-			NSFontAttributeName: NSFont.systemFont(ofSize: 10),
-			NSForegroundColorAttributeName: tint
+			NSAttributedStringKey.font: NSFont.systemFont(ofSize: 10),
+			NSAttributedStringKey.foregroundColor: tint
 			])
 
 		guard let image = image else {
@@ -79,7 +79,7 @@ public class SRTabItem: NSButton {
 		image.lockFocus()
 		tint.set()
 		let imageRect = NSRect(origin: NSZeroPoint, size: image.size)
-		NSRectFillUsingOperation(imageRect, .sourceAtop)
+		imageRect.fill(using: .sourceAtop)
 		image.unlockFocus()
 
 		self.image = image
