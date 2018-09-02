@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "SRTabBarController"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "A UITabBarController for OS X"
 
   s.description      = <<-DESC
