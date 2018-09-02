@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "SRTabBarController"
   s.version          = "0.1.1"
-  s.summary          = "A UITabBarController for OS X"
+  s.summary          = "A UITabBarController for macOS"
 
   s.description      = <<-DESC
-`SRTabBarController` aims to replicate much of `UITabBarController`'s functionality on OS X. A parent tab controller can be added and segues used within interface builder to define the tabs. Options include:
+`SRTabBarController` aims to replicate much of `UITabBarController`'s functionality on macOS. A parent tab controller can be added and segues used within interface builder to define the tabs. Options include:
 
 - Translucency using `NSVisualEffectView`
 - Positioned at the top, right, bottom, or left of the window
