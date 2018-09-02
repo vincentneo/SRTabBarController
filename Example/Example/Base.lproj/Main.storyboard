@@ -710,12 +710,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lu2-Fq-4rB">
-                                <rect key="frame" x="207" y="142" width="36" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="2Kv-a5-tD1"/>
-                                    <constraint firstAttribute="height" constant="17" id="gYj-1n-iXt"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tab 1" id="jk8-IS-CAB">
+                                <rect key="frame" x="186" y="142" width="79" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Search View" id="jk8-IS-CAB">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -723,14 +719,14 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lu2-Fq-4rB" firstAttribute="centerX" secondItem="e1k-Ub-V6J" secondAttribute="centerX" id="L9L-Hu-JdD"/>
-                            <constraint firstItem="lu2-Fq-4rB" firstAttribute="centerY" secondItem="e1k-Ub-V6J" secondAttribute="centerY" id="dZr-zr-zqR"/>
+                            <constraint firstItem="lu2-Fq-4rB" firstAttribute="centerY" secondItem="e1k-Ub-V6J" secondAttribute="centerY" id="P8S-wn-j3Q"/>
+                            <constraint firstItem="lu2-Fq-4rB" firstAttribute="centerX" secondItem="e1k-Ub-V6J" secondAttribute="centerX" id="yB8-5F-muU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="wTv-ss-Er7" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="373" y="1120"/>
+            <point key="canvasLocation" x="389" y="1224"/>
         </scene>
         <!--Home-->
         <scene sceneID="Cd3-B9-iRt">
@@ -740,12 +736,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbG-ON-bGt">
-                                <rect key="frame" x="203" y="141" width="45" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="2qt-F8-qel"/>
-                                    <constraint firstAttribute="width" constant="41" id="hQm-yN-BXc"/>
-                                </constraints>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UbG-ON-bGt">
+                                <rect key="frame" x="206" y="141" width="40" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Home" id="Ynu-vk-GKr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -753,11 +745,15 @@
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="UbG-ON-bGt" firstAttribute="centerX" secondItem="Pfm-BO-zpB" secondAttribute="centerX" id="10G-rN-jbt"/>
+                            <constraint firstItem="UbG-ON-bGt" firstAttribute="centerY" secondItem="Pfm-BO-zpB" secondAttribute="centerY" id="UuA-Rb-jCM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="MBl-ll-tZe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-615" y="1120"/>
+            <point key="canvasLocation" x="-607" y="1224"/>
         </scene>
         <!--Files-->
         <scene sceneID="9Kc-ZN-qEC">
@@ -768,12 +764,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HhT-IP-pz3">
-                                <rect key="frame" x="203" y="142" width="45" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="EfO-XS-VxD"/>
-                                    <constraint firstAttribute="height" constant="17" id="mSP-hv-P15"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="View 2" id="ALn-dR-P7L">
+                                <rect key="frame" x="193" y="142" width="65" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Files View" id="ALn-dR-P7L">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -781,14 +773,14 @@
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="HhT-IP-pz3" firstAttribute="centerY" secondItem="p1z-tM-WO6" secondAttribute="centerY" id="BHG-Sl-90d"/>
-                            <constraint firstItem="HhT-IP-pz3" firstAttribute="centerX" secondItem="p1z-tM-WO6" secondAttribute="centerX" id="xPX-zK-VRW"/>
+                            <constraint firstItem="HhT-IP-pz3" firstAttribute="centerX" secondItem="p1z-tM-WO6" secondAttribute="centerX" id="N1v-vx-c43"/>
+                            <constraint firstItem="HhT-IP-pz3" firstAttribute="centerY" secondItem="p1z-tM-WO6" secondAttribute="centerY" id="h3o-t4-MJR"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="flz-AV-LXM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-94" y="1120"/>
+            <point key="canvasLocation" x="-101" y="1224"/>
         </scene>
     </scenes>
 </document>
