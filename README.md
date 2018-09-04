@@ -24,7 +24,7 @@ pod 'SRTabBarController', :git => 'https://github.com/vincentneo/SRTabBarControl
 
 ## Usage
 
-While `SRTabBarController` can be added to your project programatically, it is recommended that you use it in your storyboard. Just like `UITabBarController` tabs can be defined via segues. As custom relationship segues are unsupported as workaround has been used that utilises custom segues and identifiers to define tabs.
+While `SRTabBarController` can be added to your project programatically, it is recommended that you use it in your storyboard, just like `UITabBarController` tabs can be defined via segues. As custom relationship segues are unsupported, a workaround has been used which utilises custom segues and identifiers to define tabs.
 
 **1 -** Drag a new `UIViewController` into your storyboard and set it as the root content view controller for your window.
 **2 -** Set the class of the new controller to be `SRTabBarController` ensuring that the bundle is set correctly.
