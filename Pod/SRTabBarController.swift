@@ -77,7 +77,6 @@ open class SRTabBarController: NSViewController, NSTabViewDelegate, SRTabItemDel
 
     open override func viewWillAppear() {
 		for item in (self.tabBar?.items)! {
-			let userInfo = ["button" : item ]
 			let area = NSTrackingArea.init( rect: item.bounds,
 											options: [NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeAlways],
 											owner: item, userInfo: nil)
